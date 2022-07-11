@@ -1,0 +1,21 @@
+pimcore:
+    assets:
+        video:
+            thumbnails:
+                definitions:
+                    small:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 320
+                                    height: 240
+                                    displayfield-1185-inputEl: '<small style=''color: red;''>width and height must be an even number</small>'
+                        medias: {  }
+                        name: small
+                        description: 'Previews for videos'
+                        group: ''
+                        videoBitrate: 400
+                        audioBitrate: 128
+                        modificationDate: 1657557638
+                        creationDate: 1657557600
