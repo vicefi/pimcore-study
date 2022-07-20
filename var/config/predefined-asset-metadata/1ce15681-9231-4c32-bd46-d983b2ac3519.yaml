@@ -1,0 +1,16 @@
+pimcore:
+    assets:
+        metadata:
+            predefined:
+                definitions:
+                    1ce15681-9231-4c32-bd46-d983b2ac3519:
+                        name: 'Video Name'
+                        description: 'The name of the video'
+                        type: input
+                        targetSubtype: null
+                        data: null
+                        config: null
+                        language: null
+                        group: null
+                        creationDate: 1657633655
+                        modificationDate: 1657633680

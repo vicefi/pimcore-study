@@ -1,0 +1,21 @@
+{% if editmode %}
+    <div>Edit mode enabled</div>
+{% endif %}
+<div class="container">
+    <div class="video-gallery">
+        {% for video in videos %}
+            {% if video is instanceof('\\Pimcore\\Model\\Asset\\Video') %}
+                {% if video.getThumbnail('small').formats.mp4 is defined %}
+                <div class="item">
+                    <div>
+                        <video controls>
+                            <source src="{{ video.getThumbnail('small').formats.mp4 }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>{{ video.getMetadata('Video Name', 'en') }}</div>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
