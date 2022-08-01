@@ -71,9 +71,31 @@ services:
         networks:
             - pimcore_network
 
+    elasticsearch:
+        user: '1000:1000'
+        image: elasticsearch:7.17.5
+        container_name: elasticsearch
+        environment:
+            - xpack.security.enabled=false
+            - discovery.type=single-node
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - elasticsearch-data:/usr/share/elasticsearch/data
+        ports:
+            - 9200:9200
+            - 9300:9300
+        depends_on:
+            - php-fpm
+        networks:
+            - pimcore_network
+
 networks:
     pimcore_network:
 
 volumes:
     pimcore-database:
     pimcore-tmp-storage:
+    elasticsearch-data:

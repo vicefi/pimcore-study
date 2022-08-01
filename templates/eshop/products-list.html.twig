@@ -1,0 +1,13 @@
+<h1>Products list</h1>
+
+<div>
+    {{ dump(filterDefinition) }}
+    {{ dump(filterService) }}
+    {% if listing.products is not empty %}
+    <ul>
+        {% for product in listing.products %}
+        <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>

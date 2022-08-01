@@ -1,0 +1,98 @@
+pimcore_data_hub:
+    configurations:
+        Products:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: Products
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1658830431
+                createDate: 1658474493
+            loaderConfig:
+                type: upload
+                settings:
+                    uploadFilePath: Products/upload.import
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ','
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '1'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /E-Shop/Product
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /E-Shop/Product
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: sequential
+                idDataIndex: '0'
+                cleanup:
+                    strategy: delete
+            mappingConfig:
+                -
+                    label: name
+                    dataSourceIndex:
+                        - '1'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: name
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: description
+                    dataSourceIndex:
+                        - '2'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: description
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: Id
+                    dataSourceIndex:
+                        - '0'
+                        - '1'
+                    settings:
+                        glue: '-'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                glue: '-'
+                            type: combine
+            executionConfig:
+                scheduleType: job
+                cronDefinition: ''
+                scheduledAt: '22-07-2022 00:00'
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }

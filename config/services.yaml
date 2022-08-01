@@ -29,6 +29,9 @@ parameters:
     # graphviz
     #pimcore_executable_dot: /usr/bin/dot
 
+    # Elasticsearch
+    elasticsearch.host: elasticsearch
+
 services:
     # default configuration for services in *this* file
     _defaults:

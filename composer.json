@@ -8,6 +8,8 @@
     "process-timeout": 0
   },
   "require": {
+    "elasticsearch/elasticsearch": "v7.17",
+    "pimcore/data-importer": "^1.6",
     "pimcore/pimcore": "^10.0"
   },
   "require-dev": {
