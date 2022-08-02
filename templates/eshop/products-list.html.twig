@@ -1,8 +1,33 @@
-<h1>Products list</h1>
+{% extends 'default/default.html.twig' %}
 
+{% block content %}
+{% if(category) %}
+    <div class="page-header">
+        <h1>{{ category.name }}</h1>
+    </div>
+{% endif %}
+
+<h2>Filters</h2>
+{#
+
+<form id="js_filterfield">
+
+    {% if(filterDefinition.filters|length > 0) %}
+
+        {% for filter in filterDefinition.filters %}
+
+            {% set filterMarkup = filterService.filterFrontend(filter, listing.products, currentFilter) %}
+
+            {{ filterMarkup | raw  }}
+
+        {% endfor %}
+    {% endif %}
+
+</form>
+
+#}
+    <div>{{ dump() }}</div>
 <div>
-    {{ dump(filterDefinition) }}
-    {{ dump(filterService) }}
     {% if listing.products is not empty %}
     <ul>
         {% for product in listing.products %}
@@ -11,3 +36,11 @@
     </ul>
     {% endif %}
 </div>
+<input type="text" id="input-field">
+
+{% do pimcore_inline_script().appendScript("
+    $('#input-field').on('change', function() {
+                alert('It works!');
+    });
+") %}
+{% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
     {% if document.getTitle() is not empty %}
@@ -34,6 +34,8 @@
         </div>
     {% endif %}
 </div>
-
+<footer>
+    <div style="padding: 70px; text-align: center">Footer</div>
+</footer>
 </body>
 </html>

@@ -116,3 +116,6 @@ pimcore_ecommerce_framework:
                         filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\Select
                         template: 'eshop/filter/select.html.php'
 
+                    FilterCategory:
+                        filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\SelectCategory
+                        template: 'eshop/filter/select_category.html.twig'

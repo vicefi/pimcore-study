@@ -19,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'ProductCategory',
    'description' => 'Category of product',
    'creationDate' => 0,
-   'modificationDate' => 1658987359,
+   'modificationDate' => 1659356561,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '\\Pimcore\\Bundle\\EcommerceFrameworkBundle\\Model\\AbstractCategory',
