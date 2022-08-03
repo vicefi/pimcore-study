@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\DataObject;
+namespace App\Model\DataObject\Product;
 
 use Pimcore\Bundle\EcommerceFrameworkBundle\Model\IndexableInterface;
 use Pimcore\Model\DataObject\Product;

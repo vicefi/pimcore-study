@@ -5,7 +5,8 @@ services:
 pimcore:
     models:
         class_overrides:
-            'Pimcore\Model\DataObject\Product': 'App\Model\DataObject\MyProduct'
+            Pimcore\Model\DataObject\Product: App\Model\DataObject\Product\MyProduct
+            Pimcore\Model\DataObject\CustomProductCategory: App\Model\DataObject\Product\CustomProductCategory
 
 pimcore_ecommerce_framework:
     index_service:
@@ -100,7 +101,7 @@ pimcore_ecommerce_framework:
 
     filter_service:
         tenants:
-            ESTenant:
+            default:
                 filter_types:
                     FilterNumberRange:
                         # Service id for filter type implementation

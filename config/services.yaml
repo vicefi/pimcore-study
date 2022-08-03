@@ -76,3 +76,15 @@ services:
     # App\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+
+    # ---------------------------------------------------------
+    # Twig Extensions
+    # ---------------------------------------------------------
+    App\Twig\Extension\CategoryFilterExtension:
+        tags: ['twig.extension']
+
+    # ---------------------------------------------------------
+    # Link Generators for DataObjects
+    # ---------------------------------------------------------
+    App\Website\LinkGenerator\CategoryLinkGenerator:
+        public: true

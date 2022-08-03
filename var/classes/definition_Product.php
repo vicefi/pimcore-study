@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1658306015,
+   'modificationDate' => 1659536071,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -145,7 +145,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               array (
-                'classes' => 'ProductCategory',
+                'classes' => 'CustomProductCategory',
               ),
             ),
              'pathFormatterClass' => '',

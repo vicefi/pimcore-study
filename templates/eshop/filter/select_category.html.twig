@@ -27,8 +27,11 @@
         {%  endif %}
 
         {% for subCategory in data.subCategories %}
-
-            <a href="{{ app_category_filter_generate_link(subCategory, rootCategory, true)  }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <span>
+                    <i class="fas fa-angle-right"></i>
+                    {{ subCategory.name }}
+            </span>
+            {#<a href="{{ app_category_filter_generate_link(subCategory, rootCategory, true)  }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                 <span>
                     <i class="fas fa-angle-right"></i>
                     {{ subCategory.name }}
@@ -36,7 +39,7 @@
                 {%  if(indexedValues[subCategory.id]) is defined %}
                     <span class="badge badge-primary badge-pill">{{ indexedValues[subCategory.id]['count']  }}</span>
                 {% endif %}
-            </a>
+            </a>#}
 
         {% endfor %}
 

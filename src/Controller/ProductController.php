@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Website\Navigation\BreadcrumbHelperService;
+use App\Model\DataObject\Product\CustomProductCategory;
 use Knp\Component\Pager\PaginatorInterface;
 use Pimcore\Bundle\EcommerceFrameworkBundle\Factory;
 use Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\ListHelper;
@@ -10,7 +10,6 @@ use Pimcore\Bundle\EcommerceFrameworkBundle\IndexService\ProductList\ProductList
 use Pimcore\Config;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject\FilterDefinition;
-use Pimcore\Model\DataObject\ProductCategory;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends FrontendController
@@ -21,12 +20,12 @@ class ProductController extends FrontendController
 
         $params['parentCategoryIds'] = $params['category'] ?? null;
 
-        $category = ProductCategory::getById($params['category'] ?? null);
+        $category = CustomProductCategory::getById($params['category'] ?? null);
         $params['category'] = $category;
 
         $indexService = $ecommerceFactory->getIndexService();
-        $productListing = $indexService->getProductListForCurrentTenant();
-        $productListing->setVariantMode(ProductListInterface::VARIANT_MODE_VARIANTS_ONLY);
+        $productListing = $indexService->getProductListForTenant('ESTenant');
+        //$productListing->setVariantMode(ProductListInterface::VARIANT_MODE_VARIANTS_ONLY);
         $params['productListing'] = $productListing;
 
         // Current filter loading
@@ -46,7 +45,6 @@ class ProductController extends FrontendController
         }
 
         $filterService = $ecommerceFactory->getFilterService();
-        var_dump($filterService->getFilterType('FilterSelect'));
         $listHelper->setupProductList($filterDefinition, $productListing, $params, $filterService, true);
         $params['filterService'] = $filterService;
         $params['filterDefinition'] = $filterDefinition;

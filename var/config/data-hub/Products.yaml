@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1658830431
+                modificationDate: 1659536000
                 createDate: 1658474493
             loaderConfig:
                 type: upload
@@ -29,11 +29,11 @@ pimcore_data_hub:
                 createLocationStrategy:
                     type: staticPath
                     settings:
-                        path: /E-Shop/Product
+                        path: /E-Shop/Products
                 locationUpdateStrategy:
                     type: staticPath
                     settings:
-                        path: /E-Shop/Product
+                        path: /E-Shop/Products
                 publishingStrategy:
                     type: alwaysPublish
             processingConfig:

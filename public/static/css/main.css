@@ -102,3 +102,12 @@ a {
     background: #eee;
 }
 /* Video gallery End*/
+
+.filter-container {
+    float: left;
+    width: 30%;
+}
+
+.products-list {
+    margin-left: 35%;
+}
