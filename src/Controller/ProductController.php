@@ -11,9 +11,18 @@ use Pimcore\Config;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject\FilterDefinition;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends FrontendController
 {
+    /**
+     * @Route("/shop/{path}{categoryname}~c{category}", name="products-list", defaults={"path"=""}, requirements={"path"=".*?", "categoryname"="[\w-]+", "category"="\d+"})
+     * @param Request $request
+     * @param Factory $ecommerceFactory
+     * @param PaginatorInterface $paginator
+     * @param ListHelper $listHelper
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function productListAction(Request $request, Factory $ecommerceFactory, PaginatorInterface $paginator, ListHelper $listHelper)
     {
         $params = array_merge($request->query->all(), $request->attributes->all());
@@ -24,7 +33,7 @@ class ProductController extends FrontendController
         $params['category'] = $category;
 
         $indexService = $ecommerceFactory->getIndexService();
-        $productListing = $indexService->getProductListForTenant('ESTenant');
+        $productListing = $indexService->getProductListForCurrentTenant();
         //$productListing->setVariantMode(ProductListInterface::VARIANT_MODE_VARIANTS_ONLY);
         $params['productListing'] = $productListing;
 

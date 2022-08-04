@@ -47,7 +47,7 @@ class CategoryLinkGenerator extends AbstractProductLinkGenerator implements Link
                 'path' => $this->getNavigationPath($object, $params['rootCategory'] ?? null),
                 'page' => null
             ],
-            'shop-category',
+            'products-list',
             $reset
         );
     }
