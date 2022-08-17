@@ -8,6 +8,8 @@
  * - name [input]
  * - description [textarea]
  * - category [manyToManyObjectRelation]
+ * - width [numeric]
+ * - height [numeric]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -16,7 +18,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1659536071,
+   'modificationDate' => 1659616741,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -159,6 +161,68 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleFieldDefinitions' => 
             array (
             ),
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'width',
+             'title' => 'Width',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => true,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'numeric',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'defaultValue' => NULL,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'defaultValueGenerator' => '',
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'height',
+             'title' => 'Height',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => true,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'numeric',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'defaultValue' => NULL,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,

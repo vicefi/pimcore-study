@@ -33,7 +33,7 @@ class ProductController extends FrontendController
         $params['category'] = $category;
 
         $indexService = $ecommerceFactory->getIndexService();
-        $productListing = $indexService->getProductListForCurrentTenant();
+        $productListing = $indexService->getProductListForTenant('ESTenant');
         //$productListing->setVariantMode(ProductListInterface::VARIANT_MODE_VARIANTS_ONLY);
         $params['productListing'] = $productListing;
 

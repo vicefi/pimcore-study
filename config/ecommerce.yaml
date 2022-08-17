@@ -13,6 +13,7 @@ pimcore_ecommerce_framework:
         tenants:
             ESTenant:
                 enabled: true
+                worker_id: Pimcore\Bundle\EcommerceFrameworkBundle\IndexService\Worker\ElasticSearch\DefaultElasticSearch7
                 config_id: 'App\Configuration\Index\ESConfig'
                 config_options:
                     client_config:
@@ -54,6 +55,22 @@ pimcore_ecommerce_framework:
                     description:
                         locale: '%%locale%%'
                         type: keyword
+                    width:
+                        type: keyword
+                        getter_options:
+                            source:
+                                - brickfield: attributes
+                                  bricktype: dimensions
+                                  fieldname: length
+                        filtergroup: double
+                    height:
+                        type: keyword
+                        getter_options:
+                            source:
+                                - brickfield: attributes
+                                  bricktype: dimensions
+                                  fieldname: length
+                        filtergroup: double
 
             NewsTenant:
                 enabled: true
@@ -107,15 +124,15 @@ pimcore_ecommerce_framework:
                         # Service id for filter type implementation
                         filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\NumberRange
                         # Default template for filter, can be overwritten in filter definition
-                        template: 'eshop/filter/numrange.html.php'
+                        template: 'eshop/filter/numrange.html.twig'
 
                     FilterNumberRangeSelection:
                         filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\NumberRangeSelection
-                        template: 'eshop/filter/numrange-select.html.php'
+                        template: 'eshop/filter/numrange-select.html.twig'
 
                     FilterSelect:
                         filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\Select
-                        template: 'eshop/filter/select.html.php'
+                        template: 'eshop/filter/select.html.twig'
 
                     FilterCategory:
                         filter_type_id: Pimcore\Bundle\EcommerceFrameworkBundle\FilterService\FilterType\ElasticSearch\SelectCategory

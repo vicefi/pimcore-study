@@ -5,6 +5,10 @@ body {
     font-size: 14px;
 }
 
+.clear {
+    clear: both;
+}
+
 #site {
     margin: 0 auto;
     width: 1200px;
@@ -111,3 +115,39 @@ a {
 .products-list {
     margin-left: 35%;
 }
+
+/* Filters */
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.btn.btn-sm {
+    margin-top: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.btn-outline-primary {
+    border-color: #6428b4;
+    color: #6428b4;
+}
+
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+
+.justify-content-end {
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+}
+/* Filters End */
